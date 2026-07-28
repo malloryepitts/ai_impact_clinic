@@ -8,13 +8,28 @@ export const Route = createFileRoute('/about')({
   component: AboutPage,
 })
 
-// PLACEHOLDER: Verify the exact names of all three institutions with the faculty lead
-// before this page goes live. Especially "The Office of the Provost" — confirm
-// the exact office name and title used officially at Wake Forest.
 const institutions = [
-  'Wake Forest Department of Computer Science',
-  'The Office of the Provost', // PLACEHOLDER: confirm exact office/title
-  'Wake Forest School of Business',
+  {
+    group: 'Wake Forest Department of Computer Science',
+    faculty: [
+      { name: 'Paul Pauca', title: 'Professor of Computer Science' },
+      { name: 'Errin Fulp', title: 'Professor of Computer Science' },
+      { name: 'Cody Stevens', title: 'Adjunct Professor of Computer Science' },
+    ],
+  },
+  {
+    group: 'Wake Forest School of Business',
+    faculty: [
+      { name: 'Shannon McKeen', title: 'Professor of the Practice' },
+    ],
+  },
+  {
+    group: 'The Office of the Provost',
+    faculty: [
+      { name: 'William Fleeson', title: 'Associate Provost for AI Initiatives' },
+      { name: 'Anne Hardcastle', title: 'Associate Provost for Academic Affairs' },
+    ],
+  },
 ]
 
 function AboutPage() {
@@ -56,36 +71,76 @@ function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-white/60 text-xl max-w-xl leading-relaxed"
           >
-            {/*
-              PLACEHOLDER: The "broader AI initiative at Wake Forest" framing below is
-              intentionally vague. Verify exact wording with the faculty lead before publishing.
-            */}
-            The AI Impact Clinic is part of a broader AI initiative at Wake Forest University. It's a
-            newer, pilot-stage effort, and we're excited to see where it goes. The Clinic follows a
-            simple path: it starts with a fall course open to every major, and continues into a
-            selective spring program where student teams work with real organizations.
+            The AI Impact Clinic helps students across every major build real fluency with AI and put
+            it to work on genuine problems. It starts with a fall course open to all majors, and
+            continues into a selective spring practicum where student teams partner with real
+            organizations.
           </motion.p>
         </div>
       </section>
 
-      {/*
-        PLACEHOLDER: The paragraph below is intentionally vague about the broader WFU AI
-        initiative. Verify exact framing and any specific details with Dr. Pauca before launch.
-      */}
-      {/* Part of something bigger — moved before the linking cards */}
-      <section className="bg-lab-off-white border-t border-lab-gold section-md">
+      {/* Part of something bigger */}
+      <section className="bg-lab-off-white border-t border-lab-gold section-lg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <p className="eyebrow mb-5">Part of something bigger</p>
             <h2 className="heading-section text-lab-black mb-6">
               Part of something bigger.
             </h2>
-            <p className="text-lab-charcoal text-lg leading-relaxed max-w-2xl">
-              The AI Impact Clinic is one part of a broader AI initiative taking shape at Wake Forest
-              University, an effort spanning multiple schools and offices to help students across
-              the university engage with AI thoughtfully and effectively. The Clinic is an early,
-              pilot-stage piece of that larger vision, and we're excited to see how it grows
-              alongside the rest of the initiative.
+            <p className="text-lab-charcoal text-lg leading-relaxed max-w-2xl mb-10">
+              The AI Impact Clinic is one of three pilot initiatives in AI for Human Flourishing, a
+              university-wide effort led by Wake Forest's Office of the Provost to help students,
+              faculty, and staff engage with AI thoughtfully and responsibly.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+            <AnimatedSection delay={0.05}>
+              <div className="bg-white border border-lab-warm-gray rounded-xl p-8 h-full flex flex-col">
+                <h3 className="heading-card text-lab-black mb-3">AI Compass</h3>
+                <p className="text-lab-charcoal leading-relaxed">
+                  Explores the ethical, societal, and health questions AI raises, and strengthens
+                  interdisciplinary research across the university.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <div className="bg-white border border-lab-warm-gray rounded-xl p-8 h-full flex flex-col">
+                <h3 className="heading-card text-lab-black mb-3">AI Teaching Studio</h3>
+                <p className="text-lab-charcoal leading-relaxed">
+                  Examines how AI is reshaping teaching and learning, with a focus on strengthening
+                  critical thinking, curiosity, and judgment.
+                </p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15}>
+              <Link
+                to="/course"
+                className="group block bg-lab-gold-light/15 border border-lab-gold rounded-xl p-8 h-full flex flex-col
+                           motion-safe:transition-all motion-safe:duration-200
+                           motion-safe:hover:-translate-y-1 hover:bg-lab-gold-light/25"
+              >
+                <h3 className="heading-card text-lab-black mb-3">AI Impact Clinic</h3>
+                <p className="text-lab-charcoal leading-relaxed flex-1">
+                  Connects students and faculty with real partners to build practical AI solutions
+                  through hands-on, real-world projects.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-lab-gold
+                                 mt-4 group-hover:text-lab-gold-dark transition-colors duration-200">
+                  Learn more <ArrowRight size={15} />
+                </span>
+              </Link>
+            </AnimatedSection>
+
+          </div>
+
+          <AnimatedSection delay={0.2}>
+            <p className="text-lab-charcoal text-base leading-relaxed">
+              As a pilot-stage program, the Clinic is just getting started, and we're excited to see
+              how it grows alongside the rest of the initiative.
             </p>
           </AnimatedSection>
         </div>
@@ -111,7 +166,7 @@ function AboutPage() {
                 </p>
                 {/* Scannable tags */}
                 <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-4 border-t border-lab-gold/20">
-                  {['14 sessions', 'Pass / Fail', 'No coding required', '1.5 credit hours'].map((tag, i, arr) => (
+                  {['15 sessions', 'Pass / Fail', 'No coding experience required', '1.5 credit hours'].map((tag, i, arr) => (
                     <span key={tag} className="flex items-center gap-1.5">
                       <span className="text-[11px] font-medium text-lab-charcoal/55">{tag}</span>
                       {i < arr.length - 1 && <span className="text-lab-gold/35 text-[11px]" aria-hidden="true">·</span>}
@@ -158,21 +213,41 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Institutional credits */}
-      <section className="bg-lab-off-white border-t border-lab-warm-gray section-md">
+      {/* Who's Behind It */}
+      <section className="bg-white border-t border-lab-warm-gray section-md">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <p className="eyebrow mb-8">Who's Behind It</p>
-            {/* PLACEHOLDER: Verify exact official names for all three institutions with the faculty lead */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {institutions.map((name, i) => (
-                <AnimatedSection key={name} delay={i * 0.08} className="h-full">
-                  <div className="h-full bg-white border border-lab-warm-gray rounded-xl p-8 flex flex-col justify-center">
-                    <p className="text-lab-black font-semibold text-base leading-snug">{name}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+              {institutions.map((inst, i) => (
+                <AnimatedSection key={inst.group} delay={i * 0.08} className="h-full">
+                  <div className="h-full bg-lab-off-white border border-lab-warm-gray rounded-xl p-8 flex flex-col">
+                    <p className="text-lab-black font-semibold text-base leading-snug mb-5">
+                      {inst.group}
+                    </p>
+                    <ul className="space-y-4">
+                      {inst.faculty.map((person) => (
+                        <li key={person.name}>
+                          <p className="text-lab-black font-semibold text-sm leading-snug">
+                            {person.name}
+                          </p>
+                          <p className="text-lab-medium-gray text-sm leading-snug mt-0.5">
+                            {person.title}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </AnimatedSection>
               ))}
             </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.25}>
+            <p className="text-lab-charcoal text-base leading-relaxed">
+              The AI Impact Clinic is led by faculty across Computer Science and the School of
+              Business, as part of Wake Forest's AI for Human Flourishing initiative.
+            </p>
           </AnimatedSection>
         </div>
       </section>

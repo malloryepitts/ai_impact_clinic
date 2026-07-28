@@ -220,7 +220,7 @@ function HomePage() {
                 <p className="text-white/65 text-base leading-relaxed">
                   A 1.5 credit hour, pass/fail course open to students of every major. No prior experience required. Learn to use AI tools with real skill and build projects you care about.
                 </p>
-                <DarkTagRow tags={['Pass / Fail', 'No coding required', '1.5 credit hours', '14 sessions']} />
+                <DarkTagRow tags={['Pass / Fail', 'No coding experience required', '1.5 credit hours', '15 sessions']} />
               </Link>
 
               <StepArrow />

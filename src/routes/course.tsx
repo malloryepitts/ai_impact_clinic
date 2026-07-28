@@ -5,11 +5,12 @@ import {
   Terminal, Cpu, Zap, FileText, Scale, Shield,
   Plug, Bot, Code2, Lock, GitMerge, CheckCircle2,
   Lightbulb, MessageCircle, Monitor, Rocket,
-  CalendarDays,
+  CalendarDays, Download, ExternalLink,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ParticleCanvas } from '@/components/ui/ParticleCanvas'
+import { GoldBorderSVG } from '@/components/ui/GoldBorderSVG'
 
 export const Route = createFileRoute('/course')({
   component: CoursePage,
@@ -93,21 +94,21 @@ const phases: Phase[] = [
   },
   {
     number: 2,
-    sessions: 'SESSIONS 7-12',
+    sessions: 'SESSIONS 7-13',
     title: 'Building With AI',
     description: 'Go deeper. See how AI connects to real tools and systems, whether you code or not.',
     topics: [
       { icon: Plug,         text: 'Connect AI to real apps and data so it can act, not just chat' },
       { icon: Bot,          text: 'Create AI agents that carry out tasks on their own' },
       { icon: Code2,        text: 'Build real things with AI as your coding partner' },
-      { icon: Lock,         text: 'Keep automated AI systems safe and under control' },
+      { icon: Lock,         text: 'Keep AI systems safe, private, and under control' },
       { icon: GitMerge,     text: 'Chain multiple steps into powerful workflows' },
       { icon: CheckCircle2, text: 'Test AI systems so you know they actually work' },
     ],
   },
   {
     number: 3,
-    sessions: 'SESSIONS 13-14',
+    sessions: 'SESSIONS 14-15',
     title: 'Synthesis and Showcase',
     description: 'Bring it all together, pitch something real, and show what you built.',
     topics: [
@@ -178,26 +179,26 @@ function CoursePage() {
             </p>
             <div className="hidden sm:block w-px h-5 bg-white/10 mr-6" />
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-              <button
-                type="button"
-                disabled
-                className="flex items-center gap-2 text-base font-medium text-white/45 cursor-not-allowed"
-                aria-label="Course schedule — coming soon"
+              <a
+                href="#when-it-meets"
+                className="flex items-center gap-2 text-base font-medium text-white/70 hover:text-white transition-colors duration-200"
+                aria-label="Jump to class schedule"
               >
                 <CalendarDays size={17} className="shrink-0" />
-                <span>Schedule</span>
-                <span className="text-white/25 font-normal text-sm">[coming soon]</span>
-              </button>
-              <button
-                type="button"
-                disabled
-                className="flex items-center gap-2 text-base font-medium text-white/45 cursor-not-allowed"
-                aria-label="Syllabus — coming soon"
+                <span className="flex flex-col leading-tight text-sm">
+                  <span>Tue 5:00-6:15 PM</span>
+                  <span>Wed 8:30-9:45 AM</span>
+                </span>
+              </a>
+              <a
+                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
+                download
+                className="flex items-center gap-2 text-base font-medium text-white/70 hover:text-white transition-colors duration-200"
+                aria-label="Download course syllabus PDF"
               >
                 <FileText size={17} className="shrink-0" />
                 <span>Syllabus</span>
-                <span className="text-white/25 font-normal text-sm">[coming soon]</span>
-              </button>
+              </a>
               <Link
                 to="/apply"
                 className="flex items-center gap-2 text-base font-semibold text-lab-gold hover:text-lab-gold-dark transition-colors duration-200"
@@ -232,8 +233,42 @@ function CoursePage() {
         </div>
       </section>
 
+      {/* When it meets */}
+      <section id="when-it-meets" className="bg-lab-gold-light border-t border-lab-warm-gray section-md">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="eyebrow mb-5">Schedule</p>
+            <h2 className="heading-section text-lab-black mb-6">
+              When it meets.
+            </h2>
+          </AnimatedSection>
+
+          <div className="space-y-3">
+            {[
+              { section: 'CSC 191 C', day: 'Tuesdays', time: '5:00-6:15 PM' },
+              { section: 'CSC 191 D', day: 'Wednesdays', time: '8:30-9:45 AM' },
+            ].map((item, i) => (
+              <AnimatedSection key={item.section} delay={i * 0.1}>
+                <div className="relative rounded-xl px-4 py-5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                  <GoldBorderSVG strokeWidth={1} />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-lab-medium-gray w-24 shrink-0">
+                    {item.section}
+                  </span>
+                  <span className="font-display text-2xl font-semibold text-lab-black">
+                    {item.day}
+                  </span>
+                  <span className="font-display text-2xl font-semibold" style={{ color: '#9E7E38' }}>
+                    {item.time}
+                  </span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Curriculum */}
-      <section className="bg-lab-off-white border-t border-lab-warm-gray section-lg">
+      <section className="bg-white border-t border-lab-warm-gray section-lg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <p className="eyebrow mb-5">Curriculum</p>
@@ -283,29 +318,50 @@ function CoursePage() {
         </div>
       </section>
 
-      {/* ── PLACEHOLDER: Full syllabus ───────────────────────────────────────────
-           Replace this section with a link to the syllabus PDF (or embedded syllabus)
-           once it is finalized. The quick-access bar above also carries a syllabus link.
-           ──────────────────────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-t border-lab-warm-gray section-md">
+      {/* Syllabus */}
+      <section className="bg-lab-gold-light border-t border-lab-warm-gray section-lg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <p className="eyebrow mb-5">Syllabus</p>
             <h2 className="heading-section text-lab-black mb-4">
-              Full syllabus.
+              Course syllabus.
             </h2>
             <p className="text-lab-charcoal text-lg leading-relaxed mb-8">
-              The complete course syllabus will be available here soon.
+              Review the full syllabus before applying.
             </p>
-            <button
-              disabled
-              className="inline-flex items-center gap-2 px-8 py-4 bg-lab-warm-gray text-lab-medium-gray
-                         font-semibold rounded text-base cursor-not-allowed"
-            >
-              View Syllabus
-              <ArrowRight size={18} />
-            </button>
-            <p className="mt-3 text-sm text-lab-medium-gray">Coming soon.</p>
+            <div className="flex flex-wrap items-center gap-4 mb-10">
+              <a
+                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Open syllabus
+                <ExternalLink size={18} />
+              </a>
+              <a
+                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
+                download
+                className="inline-flex items-center gap-2 px-6 py-4 border border-lab-gold text-lab-gold
+                           font-semibold rounded text-base hover:bg-lab-gold/10
+                           transition-all duration-300"
+              >
+                Download PDF
+                <Download size={18} />
+              </a>
+            </div>
+          </AnimatedSection>
+
+          {/* Inline preview — desktop only */}
+          <AnimatedSection delay={0.1} className="hidden md:block">
+            <div className="bg-lab-gold-light/15 border border-lab-gold rounded-xl overflow-hidden">
+              <iframe
+                src={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
+                title="AI Impact Clinic Course Syllabus"
+                width="100%"
+                style={{ height: '700px', border: 'none', display: 'block' }}
+              />
+            </div>
           </AnimatedSection>
         </div>
       </section>

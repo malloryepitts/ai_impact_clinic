@@ -41,8 +41,22 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-widest text-white/40 mb-4">Contact</h3>
             <div className="space-y-2 text-sm text-white/60">
-              <p>Department of Computer Science</p>
-              <p>Wake Forest University</p>
+              <a
+                href="https://cs.wfu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-lab-gold transition-colors"
+              >
+                Department of Computer Science
+              </a>
+              <a
+                href="https://business.wfu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-lab-gold transition-colors"
+              >
+                School of Business
+              </a>
               <a
                 href={LINKS.wfuMain}
                 target="_blank"

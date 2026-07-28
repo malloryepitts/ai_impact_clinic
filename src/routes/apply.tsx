@@ -86,8 +86,8 @@ function ApplyPage() {
                 <iframe
                   src={LINKS.applicationForm}
                   width="100%"
-                  style={{ minHeight: '800px', border: 'none' }}
-                  title="AI Impact Clinic Application Form"
+                  style={{ height: '1400px', border: 'none' }}
+                  title="AI Impact Clinic Application"
                   allow="camera; microphone"
                 />
                 <p className="mt-4 text-sm text-lab-medium-gray text-center">
