@@ -10,33 +10,33 @@ export const Route = createFileRoute('/')({
   component: HomePage,
 })
 
-/* ── Step arrow: line + arrowhead, direction-aware ───────────────────────── */
+/* ── Step arrow — light-background variant ───────────────────────────────── */
 function StepArrow() {
   return (
     <>
-      {/* Desktop: horizontal line + arrowhead */}
+      {/* Desktop: horizontal */}
       <div className="hidden md:flex items-center shrink-0 w-16">
-        <div className="flex-1 h-[1.5px] bg-white/20" />
-        <ArrowRight size={22} className="text-white/35 shrink-0 -ml-0.5" />
+        <div className="flex-1 h-[1.5px] bg-lab-black/15" />
+        <ArrowRight size={22} className="text-lab-black/25 shrink-0 -ml-0.5" />
       </div>
-      {/* Mobile: vertical line + arrowhead */}
+      {/* Mobile: vertical */}
       <div className="md:hidden flex flex-col items-center py-3">
-        <div className="w-[1.5px] h-10 bg-white/20" />
-        <ArrowDown size={22} className="text-white/35 -mt-0.5" />
+        <div className="w-[1.5px] h-10 bg-lab-black/15" />
+        <ArrowDown size={22} className="text-lab-black/25 -mt-0.5" />
       </div>
     </>
   )
 }
 
-/* ── Scannable tag row — for dark-background cards ───────────────────────── */
-function DarkTagRow({ tags }: { tags: string[] }) {
+/* ── Scannable tag row — light-background cards ──────────────────────────── */
+function LightTagRow({ tags }: { tags: string[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-4 border-t border-white/10">
+    <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-4 border-t border-lab-black/10">
       {tags.map((tag, i, arr) => (
         <span key={tag} className="flex items-center gap-1.5">
-          <span className="text-[11px] font-medium text-white/45">{tag}</span>
+          <span className="text-[11px] font-medium text-lab-charcoal/55">{tag}</span>
           {i < arr.length - 1 && (
-            <span className="text-white/20 text-[11px]" aria-hidden="true">·</span>
+            <span className="text-lab-black/20 text-[11px]" aria-hidden="true">·</span>
           )}
         </span>
       ))}
@@ -44,7 +44,7 @@ function DarkTagRow({ tags }: { tags: string[] }) {
   )
 }
 
-/* ── Outcomes content (shared between sections) ──────────────────────────── */
+/* ── Outcomes content ────────────────────────────────────────────────────── */
 const outcomes = [
   'Confidence using AI tools like Claude for work that actually matters',
   'Repeatable AI workflows you can bring to any class, job, or team',
@@ -79,7 +79,6 @@ function HomePage() {
       >
         {/* Grid substrate + particle network share one opacity wrapper so both fade on scroll */}
         <div className="absolute inset-0 pointer-events-none" style={{ opacity: gridOpacity }}>
-          {/* Very faint grid — low-opacity substrate under the more-visible particles */}
           <div
             className="absolute inset-0"
             style={{
@@ -88,7 +87,6 @@ function HomePage() {
               backgroundSize: '60px 60px',
             }}
           />
-          {/* Animated particle network — disabled when prefers-reduced-motion */}
           <ParticleCanvas />
         </div>
 
@@ -107,7 +105,7 @@ function HomePage() {
             transition={{ duration: 0.65, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="heading-display text-white mb-8"
           >
-            AI is for everyone. Learn to use it well.
+            AI is for everyone. Learn to use it to solve real problems.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +132,124 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Section 2 — Two-column editorial band */}
+      {/* Section 2 — AI Impact Clinic Track (warm-surface, light cards, gold borders) */}
+      <section className="bg-lab-warm-surface section-lg">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="eyebrow mb-6">How it works</p>
+            <h2 className="heading-section text-lab-black mb-14 text-3xl md:text-4xl">
+              The AI Impact Clinic Track.
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.1}>
+            <div className="flex flex-col md:flex-row md:items-stretch">
+
+              {/* Card 1 — The Course (linked) */}
+              <Link
+                to="/course"
+                className="flex-1 bg-white border-2 border-lab-gold rounded-xl p-6
+                           motion-safe:transition-all motion-safe:duration-200
+                           hover:bg-lab-gold-light/20 hover:ring-1 hover:ring-lab-gold
+                           motion-safe:hover:-translate-y-1"
+              >
+                <div className="w-10 h-10 rounded-lg bg-lab-gold/10 flex items-center justify-center mb-4">
+                  <BookOpen size={20} className="text-lab-gold" />
+                </div>
+                <p className="eyebrow mb-2">Step One · Fall</p>
+                <h3 className="heading-card text-lab-black mb-2">The Course</h3>
+                <p className="text-lab-charcoal text-base leading-relaxed">
+                  A 1.5 credit hour, pass/fail course open to students of every major. No prior experience required. Learn to use AI tools with real skill and build projects you care about.
+                </p>
+                <LightTagRow tags={['Pass / Fail', 'No coding experience required', '1.5 credit hours', '15 sessions']} />
+              </Link>
+
+              <StepArrow />
+
+              {/* Card 2 — The Impact Clinic (linked) */}
+              <Link
+                to="/lab"
+                className="flex-1 bg-white border-2 border-lab-gold rounded-xl p-6
+                           motion-safe:transition-all motion-safe:duration-200
+                           hover:bg-lab-gold-light/20 hover:ring-1 hover:ring-lab-gold
+                           motion-safe:hover:-translate-y-1"
+              >
+                <div className="w-10 h-10 rounded-lg bg-lab-gold/10 flex items-center justify-center mb-4">
+                  <FlaskConical size={20} className="text-lab-gold" />
+                </div>
+                <p className="eyebrow mb-2">Step Two · Spring</p>
+                <h3 className="heading-card text-lab-black mb-2">The Impact Clinic</h3>
+                <p className="text-lab-charcoal text-base leading-relaxed">
+                  A selective continuation for students who complete the course. Work on a small team paired with a real local organization to design and deploy an AI solution to a genuine business challenge.
+                </p>
+                <LightTagRow tags={['~20 students', '5 teams', 'Live client work']} />
+              </Link>
+
+              <StepArrow />
+
+              {/* Card 3 — What you gain (not linked) */}
+              <div className="flex-1 bg-white border-2 border-lab-gold rounded-xl p-6">
+                <div className="w-10 h-10 rounded-lg bg-lab-gold/10 flex items-center justify-center mb-4">
+                  <Rocket size={20} className="text-lab-gold" />
+                </div>
+                <p className="eyebrow mb-2">What You Gain</p>
+                <h3 className="heading-card text-lab-black mb-2">Your future</h3>
+                <p className="text-lab-charcoal text-base leading-relaxed">
+                  Hands-on experience, real projects, and AI fluency that stands out on any resume and in any interview. Skills that carry into whatever you do next.
+                </p>
+              </div>
+
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <div className="mt-14 flex flex-col items-center gap-3 text-center">
+              <Link to="/apply" className="btn-primary">
+                Apply Now
+                <ArrowRight size={18} />
+              </Link>
+              <p className="text-lab-charcoal/50 text-sm">Open to all majors. No experience required.</p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Section 3 — Student testimonials (black) */}
+      <section className="bg-[#111111] section-md">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="eyebrow mb-5">What you'll do</p>
+            <h2 className="heading-section text-white mb-10 text-3xl md:text-4xl">
+              See what's possible.
+            </h2>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              'Being able to work with a client, manage that relationship, and defend your ideas with stakeholders are skills that I would not have been able to learn in just the classroom setting.',
+              'It was my first time working with a real client to solve a real business problem.',
+              'Our team had a real client engagement. We were building a machine learning model to predict customer conversion, the kind of work where the output actually feeds a budget decision somewhere down the line.',
+              'We built anomaly detection models for a financial services client. Three algorithms. Hundreds of features. Twenty-five years of historical data.',
+            ].map((quote, i) => (
+              <AnimatedSection key={i} delay={i * 0.08} className="h-full">
+                <div
+                  className="bg-white/[0.06] border border-lab-gold/50 rounded-xl p-8 h-full
+                             flex flex-col justify-center
+                             motion-safe:transition-all motion-safe:duration-200
+                             motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
+                >
+                  <p className="text-white/80 text-base leading-relaxed text-center">
+                    <span className="text-lab-gold font-serif text-2xl select-none" aria-hidden="true">&ldquo;</span>
+                    {quote}
+                    <span className="text-lab-gold font-serif text-2xl select-none" aria-hidden="true">&rdquo;</span>
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4 — Two-column editorial band */}
       <section className="bg-lab-gold-light border-t border-lab-gold section-lg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row">
@@ -170,7 +285,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Section 3 — Outcomes with GoldBorderSVG framing */}
+      {/* Section 5 — Outcomes with GoldBorderSVG framing */}
       <section className="bg-white border-t border-lab-gold section-md">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-xl p-8 md:p-10">
@@ -188,120 +303,6 @@ function HomePage() {
                 ))}
               </ul>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4 — The path */}
-      <section className="bg-[#111111] section-lg">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <p className="eyebrow mb-6">How it works</p>
-            <h2 className="heading-section text-white mb-14 text-3xl md:text-4xl">
-              The AI Impact Clinic Track.
-            </h2>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.1}>
-            <div className="flex flex-col md:flex-row md:items-stretch">
-
-              {/* Card 1 — The Course (linked) */}
-              <Link
-                to="/course"
-                className="flex-1 bg-[#222222] border border-white/10 rounded-xl p-6
-                           motion-safe:transition-all motion-safe:duration-200
-                           motion-safe:hover:-translate-y-1 motion-safe:hover:border-white/25"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white/8 flex items-center justify-center mb-4">
-                  <BookOpen size={20} className="text-lab-gold" />
-                </div>
-                <p className="eyebrow mb-2">Step One · Fall</p>
-                <h3 className="heading-card text-white mb-2">The Course</h3>
-                <p className="text-white/65 text-base leading-relaxed">
-                  A 1.5 credit hour, pass/fail course open to students of every major. No prior experience required. Learn to use AI tools with real skill and build projects you care about.
-                </p>
-                <DarkTagRow tags={['Pass / Fail', 'No coding experience required', '1.5 credit hours', '15 sessions']} />
-              </Link>
-
-              <StepArrow />
-
-              {/* Card 2 — The Impact Clinic (linked) */}
-              <Link
-                to="/lab"
-                className="flex-1 bg-[#222222] border border-white/10 rounded-xl p-6
-                           motion-safe:transition-all motion-safe:duration-200
-                           motion-safe:hover:-translate-y-1 motion-safe:hover:border-white/25"
-              >
-                <div className="w-10 h-10 rounded-lg bg-white/8 flex items-center justify-center mb-4">
-                  <FlaskConical size={20} className="text-lab-gold" />
-                </div>
-                <p className="eyebrow mb-2">Step Two · Spring</p>
-                <h3 className="heading-card text-white mb-2">The Impact Clinic</h3>
-                <p className="text-white/65 text-base leading-relaxed">
-                  A selective continuation for students who complete the course. Work on a small team paired with a real local organization to design and deploy an AI solution to a genuine business challenge.
-                </p>
-                <DarkTagRow tags={['~20 students', '5 teams', 'Live client work']} />
-              </Link>
-
-              <StepArrow />
-
-              {/* Card 3 — What you gain (not linked, no hover) */}
-              <div className="flex-1 bg-[#222222] border border-white/10 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-white/8 flex items-center justify-center mb-4">
-                  <Rocket size={20} className="text-lab-gold" />
-                </div>
-                <p className="eyebrow mb-2">What You Gain</p>
-                <h3 className="heading-card text-white mb-2">Your future</h3>
-                <p className="text-white/65 text-base leading-relaxed">
-                  Hands-on experience, real projects, and AI fluency that stands out on any resume and in any interview. Skills that carry into whatever you do next.
-                </p>
-              </div>
-
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.2}>
-            <div className="mt-14 flex flex-col items-center gap-3 text-center">
-              <Link to="/apply" className="btn-primary">
-                Apply Now
-                <ArrowRight size={18} />
-              </Link>
-              <p className="text-white/50 text-sm">Open to all majors. No experience required.</p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── PLACEHOLDER: What students build ────────────────────────────────────
-           Replace the placeholder cards below with real student project examples
-           and testimonials once content is available from the first cohort.
-           ──────────────────────────────────────────────────────────────────── */}
-      <section className="bg-lab-off-white border-t border-lab-warm-gray section-md">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <p className="eyebrow mb-5">Student Work</p>
-            <h2 className="heading-section text-lab-black mb-4 text-3xl md:text-4xl">
-              See what's possible.
-            </h2>
-            <p className="text-lab-charcoal text-lg leading-relaxed mb-10 max-w-2xl">
-              Students in the AI Impact Clinic build tools, workflows, and analyses around problems they actually care about. Examples from the first cohort coming soon.
-            </p>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {[
-              { label: 'Student project example coming soon.', badge: 'Project' },
-              { label: 'Student project example coming soon.', badge: 'Project' },
-              { label: 'Student testimonial coming soon.', badge: 'Testimonial' },
-            ].map((item, i) => (
-              <AnimatedSection key={item.badge + i} delay={i * 0.08}>
-                <div className="bg-white border border-dashed border-lab-warm-gray rounded-xl p-6 min-h-[148px] flex flex-col gap-4">
-                  <span className="inline-block self-start text-[11px] font-semibold uppercase tracking-[0.15em] text-lab-gold border border-lab-gold/40 rounded-full px-3 py-1">
-                    {item.badge}
-                  </span>
-                  <p className="text-lab-medium-gray text-sm leading-relaxed">{item.label}</p>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>

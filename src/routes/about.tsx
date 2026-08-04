@@ -12,9 +12,8 @@ const institutions = [
   {
     group: 'Wake Forest Department of Computer Science',
     faculty: [
-      { name: 'Paul Pauca', title: 'Professor of Computer Science' },
+      { name: 'Paúl Pauca', title: 'Professor of Computer Science' },
       { name: 'Errin Fulp', title: 'Professor of Computer Science' },
-      { name: 'Cody Stevens', title: 'Adjunct Professor of Computer Science' },
     ],
   },
   {
@@ -27,7 +26,6 @@ const institutions = [
     group: 'The Office of the Provost',
     faculty: [
       { name: 'William Fleeson', title: 'Associate Provost for AI Initiatives' },
-      { name: 'Anne Hardcastle', title: 'Associate Provost for Academic Affairs' },
     ],
   },
 ]

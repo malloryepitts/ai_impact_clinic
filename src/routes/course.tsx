@@ -16,9 +16,6 @@ export const Route = createFileRoute('/course')({
   component: CoursePage,
 })
 
-// Update once the final course name is confirmed.
-const COURSE_TITLE_PLACEHOLDER = '[Course Name Placeholder]'
-
 /* ── Value cards ─────────────────────────────────────────────────────────── */
 const valueCards = [
   {
@@ -150,10 +147,18 @@ function CoursePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="heading-display text-white mb-6"
+            className="heading-display text-white mb-3"
           >
-            {COURSE_TITLE_PLACEHOLDER}
+            Fall AI Impact Course
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-lab-gold text-base font-semibold uppercase tracking-widest mb-6"
+          >
+            CSC 191: AI Impact Clinic I
+          </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
