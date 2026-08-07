@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
-  { label: 'Course', to: '/course' },
-  { label: 'AI Impact Clinic', to: '/lab' },
+  { label: 'Fall Course', to: '/course' },
+  { label: 'Spring Course', to: '/lab' },
 ]
 
 export function Navbar() {
@@ -42,10 +42,12 @@ export function Navbar() {
           {/* Wordmark */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              src={scrolled
+                ? `${import.meta.env.BASE_URL}images/wake-forest-black.svg`
+                : `${import.meta.env.BASE_URL}images/wake-forest-white.svg`
+              }
               alt="Wake Forest University"
               className="h-14 w-auto transition-all duration-300"
-              style={{ filter: scrolled ? 'none' : 'invert(1)' }}
             />
             <span className="text-4xl font-bold tracking-tight">
               <span className="text-lab-gold">AI</span>

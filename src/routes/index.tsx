@@ -157,7 +157,7 @@ function HomePage() {
                   <BookOpen size={20} className="text-lab-gold" />
                 </div>
                 <p className="eyebrow mb-2">Step One · Fall</p>
-                <h3 className="heading-card text-lab-black mb-2">The Course</h3>
+                <h3 className="heading-card text-lab-black mb-2">AI Impact Clinic I (Fall)</h3>
                 <p className="text-lab-charcoal text-base leading-relaxed">
                   A 1.5 credit hour, pass/fail course open to students of every major. No prior experience required. Learn to use AI tools with real skill and build projects you care about.
                 </p>
@@ -178,9 +178,9 @@ function HomePage() {
                   <FlaskConical size={20} className="text-lab-gold" />
                 </div>
                 <p className="eyebrow mb-2">Step Two · Spring</p>
-                <h3 className="heading-card text-lab-black mb-2">The Impact Clinic</h3>
+                <h3 className="heading-card text-lab-black mb-2">AI Impact Clinic II (Spring)</h3>
                 <p className="text-lab-charcoal text-base leading-relaxed">
-                  A selective continuation for students who complete the course. Work on a small team paired with a real local organization to design and deploy an AI solution to a genuine business challenge.
+                  A selective continuation for students who complete the Fall Course. Work on a small team paired with a real local organization to design and deploy an AI solution to a genuine business challenge.
                 </p>
                 <LightTagRow tags={['~20 students', '5 teams', 'Live client work']} />
               </Link>
@@ -218,7 +218,7 @@ function HomePage() {
       <section className="bg-[#111111] section-md">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <p className="eyebrow mb-5">What you'll do</p>
+            <p className="eyebrow mb-5">Hear from prior students</p>
             <h2 className="heading-section text-white mb-10 text-3xl md:text-4xl">
               See what's possible.
             </h2>
@@ -246,6 +246,9 @@ function HomePage() {
               </AnimatedSection>
             ))}
           </div>
+          <p className="mt-8 text-white/30 text-xs leading-relaxed max-w-2xl">
+            Quotes are drawn from reflections by Wake Forest MSBA students who completed the experiential learning program that the AI Impact Clinic is modeled after.
+          </p>
         </div>
       </section>
 

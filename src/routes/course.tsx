@@ -112,7 +112,7 @@ const phases: Phase[] = [
       { icon: Lightbulb,     text: 'Pitch a real project you care about' },
       { icon: MessageCircle, text: 'Sharpen it with feedback from your peers' },
       { icon: Monitor,       text: 'Present what you built' },
-      { icon: Rocket,        text: 'Get ready for the Spring AI Impact Clinic' },
+      { icon: Rocket,        text: 'Get ready for the Spring Course (AI Impact Clinic II)' },
     ],
   },
 ]
@@ -149,7 +149,7 @@ function CoursePage() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className="heading-display text-white mb-3"
           >
-            Fall AI Impact Course
+            CSC 191: AI Impact Clinic I
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ function CoursePage() {
             transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-lab-gold text-base font-semibold uppercase tracking-widest mb-6"
           >
-            CSC 191: AI Impact Clinic I
+            
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

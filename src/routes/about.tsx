@@ -70,8 +70,8 @@ function AboutPage() {
             className="text-white/60 text-xl max-w-xl leading-relaxed"
           >
             The AI Impact Clinic helps students across every major build real fluency with AI and put
-            it to work on genuine problems. It starts with a fall course open to all majors, and
-            continues into a selective spring practicum where student teams partner with real
+            it to work on genuine problems. It starts with the Fall Course, open to all majors, and
+            continues into a selective Spring Course where student teams partner with real
             organizations.
           </motion.p>
         </div>
@@ -157,7 +157,7 @@ function AboutPage() {
                            motion-safe:hover:-translate-y-1 hover:bg-lab-gold-light/25"
               >
                 <p className="eyebrow mb-4">Fall</p>
-                <h2 className="heading-card text-lab-black mb-3">The Course</h2>
+                <h2 className="heading-card text-lab-black mb-3">AI Impact Clinic I (Fall)</h2>
                 <p className="text-lab-charcoal leading-relaxed">
                   A 1.5 credit hour, pass/fail course open to every major. The starting point of
                   the AI Impact Clinic.
@@ -186,7 +186,7 @@ function AboutPage() {
                            motion-safe:hover:-translate-y-1 hover:bg-lab-gold-light/25"
               >
                 <p className="eyebrow mb-4">Spring</p>
-                <h2 className="heading-card text-lab-black mb-3">The AI Impact Clinic</h2>
+                <h2 className="heading-card text-lab-black mb-3">AI Impact Clinic II (Spring)</h2>
                 <p className="text-lab-charcoal leading-relaxed">
                   A selective continuation where student teams partner with real local organizations
                   to build and deploy AI solutions.

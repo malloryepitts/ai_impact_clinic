@@ -26,7 +26,7 @@ export function Footer() {
                 { label: 'About', to: '/about' },
                 { label: 'Fall Course', to: '/course' },
                 { label: 'Apply', to: '/apply' },
-                { label: 'Spring Clinic', to: '/lab' },
+                { label: 'Spring Course', to: '/lab' },
               ].map((link) => (
                 <li key={link.to}>
                   <Link to={link.to} className="text-sm text-white/60 hover:text-lab-gold transition-colors">
