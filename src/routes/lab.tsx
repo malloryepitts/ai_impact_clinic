@@ -65,24 +65,26 @@ function LabPage() {
             <AnimatedSection delay={0.1}>
               <div className="space-y-6 text-lab-charcoal leading-relaxed">
                 <p>
-                  The Spring Course (AI Impact Clinic II) is a selective continuation of the Fall Course. Roughly 20 students are invited to participate, forming five teams of four or five.
+                  The Spring Course (AI Impact Clinic II) is a selective continuation of the Fall Course. A small cohort of students is invited to participate, working in teams.
                 </p>
                 <p>
-                  Each team is matched with a real local organization in Winston-Salem - a business, nonprofit, or community partner - facing a genuine challenge where AI tools could create meaningful value.
+                  Each team is matched with a partner organization facing a genuine challenge where AI tools could create meaningful value.
                 </p>
                 <p>
                   Teams manage the full engagement: scoping the problem, designing a solution, building and testing it, and presenting findings to real stakeholders. Students leave with a portfolio piece unlike anything available through a standard academic track.
+                </p>
+                <p className="text-lab-medium-gray text-sm">
+                  This is the plan for now. More details coming soon.
                 </p>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <ul className="space-y-5">
                 {[
-                  { label: 'Cohort size', value: 'Approximately 20 students' },
-                  { label: 'Team structure', value: 'Five teams of 4-5 students' },
-                  { label: 'Partners', value: 'Local Winston-Salem organizations' },
+                  { label: 'Format', value: 'Small cohort, team-based' },
+                  { label: 'Partners', value: 'Partner organizations' },
                   { label: 'Outcome', value: 'A deployed AI solution and client presentation' },
-                  { label: 'Eligibility', value: 'Selected from fall course completers' },
+                  { label: 'Eligibility', value: 'Selected from Fall Course completers' },
                 ].map((item) => (
                   <li key={item.label} className="border-b border-lab-warm-gray pb-4 last:border-0">
                     <div className="text-xs font-semibold uppercase tracking-widest text-lab-medium-gray mb-1">{item.label}</div>

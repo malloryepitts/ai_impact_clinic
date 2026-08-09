@@ -5,7 +5,7 @@ import {
   Terminal, Cpu, Zap, FileText, Scale, Shield,
   Plug, Bot, Code2, Lock, GitMerge, CheckCircle2,
   Lightbulb, MessageCircle, Monitor, Rocket,
-  CalendarDays, Download, ExternalLink,
+  CalendarDays,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
@@ -190,20 +190,12 @@ function CoursePage() {
                 aria-label="Jump to class schedule"
               >
                 <CalendarDays size={17} className="shrink-0" />
-                <span className="flex flex-col leading-tight text-sm">
-                  <span>Tue 5:00-6:15 PM</span>
-                  <span>Wed 8:30-9:45 AM</span>
-                </span>
+                <span className="text-sm">Times: TBD</span>
               </a>
-              <a
-                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
-                download
-                className="flex items-center gap-2 text-base font-medium text-white/70 hover:text-white transition-colors duration-200"
-                aria-label="Download course syllabus PDF"
-              >
+              <span className="flex items-center gap-2 text-sm font-medium text-white/35 cursor-default">
                 <FileText size={17} className="shrink-0" />
-                <span>Syllabus</span>
-              </a>
+                <span>Syllabus coming soon</span>
+              </span>
               <Link
                 to="/apply"
                 className="flex items-center gap-2 text-base font-semibold text-lab-gold hover:text-lab-gold-dark transition-colors duration-200"
@@ -250,8 +242,8 @@ function CoursePage() {
 
           <div className="space-y-3">
             {[
-              { section: 'CSC 191 C', day: 'Tuesdays', time: '5:00-6:15 PM' },
-              { section: 'CSC 191 D', day: 'Wednesdays', time: '8:30-9:45 AM' },
+              { section: 'CSC 191 C', day: 'TBD', time: '' },
+              { section: 'CSC 191 D', day: 'TBD', time: '' },
             ].map((item, i) => (
               <AnimatedSection key={item.section} delay={i * 0.1}>
                 <div className="relative rounded-xl px-4 py-5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
@@ -331,42 +323,9 @@ function CoursePage() {
             <h2 className="heading-section text-lab-black mb-4">
               Course syllabus.
             </h2>
-            <p className="text-lab-charcoal text-lg leading-relaxed mb-8">
-              Review the full syllabus before applying.
+            <p className="text-lab-charcoal text-lg leading-relaxed">
+              Syllabus coming soon.
             </p>
-            <div className="flex flex-wrap items-center gap-4 mb-10">
-              <a
-                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Open syllabus
-                <ExternalLink size={18} />
-              </a>
-              <a
-                href={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
-                download
-                className="inline-flex items-center gap-2 px-6 py-4 border border-lab-gold text-lab-gold
-                           font-semibold rounded text-base hover:bg-lab-gold/10
-                           transition-all duration-300"
-              >
-                Download PDF
-                <Download size={18} />
-              </a>
-            </div>
-          </AnimatedSection>
-
-          {/* Inline preview — desktop only */}
-          <AnimatedSection delay={0.1} className="hidden md:block">
-            <div className="bg-lab-gold-light/15 border border-lab-gold rounded-xl overflow-hidden">
-              <iframe
-                src={`${import.meta.env.BASE_URL}ai-impact-course-syllabus-F26.pdf`}
-                title="AI Impact Clinic Course Syllabus"
-                width="100%"
-                style={{ height: '700px', border: 'none', display: 'block' }}
-              />
-            </div>
           </AnimatedSection>
         </div>
       </section>

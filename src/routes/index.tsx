@@ -159,7 +159,7 @@ function HomePage() {
                 <p className="eyebrow mb-2">Step One · Fall</p>
                 <h3 className="heading-card text-lab-black mb-2">AI Impact Clinic I (Fall)</h3>
                 <p className="text-lab-charcoal text-base leading-relaxed">
-                  A 1.5 credit hour, pass/fail course open to students of every major. No prior experience required. Learn to use AI tools with real skill and build projects you care about.
+                  A 1.5 credit hour, pass/fail lecture-style course open to students of every major. Build individual AI fluency through real skills and hands-on projects. No prior experience required.
                 </p>
                 <LightTagRow tags={['Pass / Fail', 'No coding experience required', '1.5 credit hours', '15 sessions']} />
               </Link>
@@ -180,7 +180,7 @@ function HomePage() {
                 <p className="eyebrow mb-2">Step Two · Spring</p>
                 <h3 className="heading-card text-lab-black mb-2">AI Impact Clinic II (Spring)</h3>
                 <p className="text-lab-charcoal text-base leading-relaxed">
-                  A selective continuation for students who complete the Fall Course. Work on a small team paired with a real local organization to design and deploy an AI solution to a genuine business challenge.
+                  A selective, hands-on, team-based course for students who complete the Fall Course. Work with a real partner organization to design and deploy an AI solution to a genuine business challenge.
                 </p>
                 <LightTagRow tags={['~20 students', '5 teams', 'Live client work']} />
               </Link>
