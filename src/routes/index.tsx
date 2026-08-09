@@ -113,7 +113,7 @@ function HomePage() {
             transition={{ duration: 0.65, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-white/70 text-xl md:text-2xl leading-relaxed max-w-2xl mb-12"
           >
-            The AI Impact Clinic at Wake Forest teaches students across every major to use AI tools effectively, responsibly, and with purpose. 1.5 credit hours. No experience required.
+            The AI Impact Clinic at Wake Forest teaches students across every major to use AI tools effectively, responsibly, and with purpose. 1.5 credit hours per semester. No experience required.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -182,7 +182,7 @@ function HomePage() {
                 <p className="text-lab-charcoal text-base leading-relaxed">
                   A selective, hands-on, team-based course for students who complete the Fall Course. Work with a real partner organization to design and deploy an AI solution to a genuine business challenge.
                 </p>
-                <LightTagRow tags={['~20 students', '5 teams', 'Live client work']} />
+                <LightTagRow tags={['1.5 credit hours', '~20 students', '5 teams', 'Live client work']} />
               </Link>
 
               <StepArrow />

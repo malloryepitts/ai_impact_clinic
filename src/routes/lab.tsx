@@ -81,6 +81,7 @@ function LabPage() {
             <AnimatedSection delay={0.2}>
               <ul className="space-y-5">
                 {[
+                  { label: 'Credit hours', value: '1.5 credit hours' },
                   { label: 'Format', value: 'Small cohort, team-based' },
                   { label: 'Partners', value: 'Partner organizations' },
                   { label: 'Outcome', value: 'A deployed AI solution and client presentation' },

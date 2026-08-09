@@ -193,7 +193,7 @@ function AboutPage() {
                 </p>
                 {/* Scannable tags */}
                 <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-4 border-t border-lab-gold/20">
-                  {['~20 students', '5 teams', 'Live client work'].map((tag, i, arr) => (
+                  {['1.5 credit hours', '~20 students', '5 teams', 'Live client work'].map((tag, i, arr) => (
                     <span key={tag} className="flex items-center gap-1.5">
                       <span className="text-[11px] font-medium text-lab-charcoal/55">{tag}</span>
                       {i < arr.length - 1 && <span className="text-lab-gold/35 text-[11px]" aria-hidden="true">·</span>}
