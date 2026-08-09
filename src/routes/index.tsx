@@ -218,9 +218,9 @@ function HomePage() {
       <section className="bg-[#111111] section-md">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <p className="eyebrow mb-5">Hear from prior students</p>
+            <p className="eyebrow mb-5">See what's possible</p>
             <h2 className="heading-section text-white mb-10 text-3xl md:text-4xl">
-              See what's possible.
+              Hear from prior students.
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
