@@ -4,7 +4,7 @@ import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 import path from 'path'
 
 export default defineConfig({
-  base: '/ai_impact_lab_v2/',
+  base: '/ai_impact_clinic/',
   plugins: [
     TanStackRouterVite(),
     react(),
