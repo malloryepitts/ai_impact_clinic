@@ -190,7 +190,7 @@ function CoursePage() {
                 aria-label="Jump to class schedule"
               >
                 <CalendarDays size={17} className="shrink-0" />
-                <span className="text-sm">Times: TBD</span>
+                <span className="text-sm">Tue 5:00-6:15 PM &nbsp;|&nbsp; Wed 3:30-4:45 PM</span>
               </a>
               <span className="flex items-center gap-2 text-sm font-medium text-white/35 cursor-default">
                 <FileText size={17} className="shrink-0" />
@@ -242,8 +242,8 @@ function CoursePage() {
 
           <div className="space-y-3">
             {[
-              { section: 'CSC 191 C', day: 'TBD', time: '' },
-              { section: 'CSC 191 D', day: 'TBD', time: '' },
+              { section: 'CSC 191 C', day: 'Tuesdays', time: '5:00-6:15 PM' },
+              { section: 'CSC 191 D', day: 'Wednesdays', time: '3:30-4:45 PM' },
             ].map((item, i) => (
               <AnimatedSection key={item.section} delay={i * 0.1}>
                 <div className="relative rounded-xl px-4 py-5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
