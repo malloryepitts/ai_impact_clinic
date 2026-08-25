@@ -242,6 +242,20 @@ function AboutPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.25}>
+            <div className="bg-white border border-lab-warm-gray rounded-xl p-8 flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+              <img
+                src={`${import.meta.env.BASE_URL}images/deacs-do.png`}
+                alt="Deacs Do: Experiential Learning at Wake Forest"
+                className="w-40 shrink-0 object-contain self-start sm:self-center"
+              />
+              <p className="text-lab-charcoal text-base leading-relaxed">
+                The Spring Course is an experiential learning course, part of Wake Forest's Deacs Do
+                experiential learning program.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.35}>
             <p className="text-lab-charcoal text-base leading-relaxed">
               The AI Impact Clinic is led by faculty across Computer Science and the School of
               Business, as part of Wake Forest's AI for Human Flourishing initiative.
